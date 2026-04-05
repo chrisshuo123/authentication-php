@@ -24,12 +24,13 @@ if (isset($_SESSION['errors'])) {
     <?php
     if (isset($errors['login'])) {
       echo '<div class="error-main">
-                    <p>' . $errors['login'] . '</p>
-                    </div>';
+                <p>' . $errors['login'] . '</p>
+            </div>';
       unset($errors['login']);
     }
     ?>
     <form method="POST" action="user-account.php">
+      <!-- Input Email -->
       <div class="input-group">
         <i class="fas fa-envelope"></i>
         <input type="email" name="email" id="email" placeholder="Email" required>
@@ -41,6 +42,7 @@ if (isset($_SESSION['errors'])) {
         }
         ?>
       </div>
+      <!-- Input Password -->
       <div class="input-group password">
         <i class="fas fa-lock"></i>
         <input type="password" name="password" id="password" placeholder="Password" required>
@@ -53,6 +55,7 @@ if (isset($_SESSION['errors'])) {
         }
         ?>
       </div>
+      <!-- Recover Password -->
       <p class="recover">
         <a href="#">Recover Password</a>
       </p>
@@ -65,6 +68,7 @@ if (isset($_SESSION['errors'])) {
       <i class="fab fa-google"></i>
       <i class="fab fa-facebook"></i>
     </div>
+    <!-- Sign Up Button -->
     <div class="links">
       <p>Don't have account yet?</p>
       <a href="register.php">Sign Up</a>

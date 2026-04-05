@@ -3,7 +3,7 @@
 session_start();
 if (isset($_SESSION['errors'])) {
     $errors = $_SESSION['errors'];
- }
+}
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ if (isset($_SESSION['errors'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register Page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -32,6 +32,7 @@ if (isset($_SESSION['errors'])) {
         }
         ?>
         <form method="POST" action="user-account.php">
+            <!-- Input Name -->
             <div class="input-group">
                 <i class="fas fa-user"></i>
                 <input type="text" name="name" id="name" placeholder="Name" required>
@@ -40,11 +41,12 @@ if (isset($_SESSION['errors'])) {
                     echo ' <div class="error">
                     <p>' . $errors['name'] . '</p>
                 </div>';
-          
+                unset($errors['name']);
                 }
                 ?>
             </div>
 
+            <!-- Input Email -->
             <div class="input-group">
                 <i class="fas fa-envelope"></i>
                 <input type="email" name="email" id="email" placeholder="Email" required>
@@ -58,6 +60,7 @@ if (isset($_SESSION['errors'])) {
                 }
                 ?>
             </div>
+            <!-- Input Password -->
             <div class="input-group password">
                 <i class="fas fa-lock"></i>
                 <input type="password" name="password" id="password" placeholder="Password" >
@@ -73,6 +76,7 @@ if (isset($_SESSION['errors'])) {
                 }
                 ?>
             </div>
+            <!-- Input Confirm Password -->
             <div class="input-group">
                 <i class="fas fa-lock"></i>
                 <input type="password" name="confirm_password" placeholder="Confirm Password" required>
@@ -86,6 +90,7 @@ if (isset($_SESSION['errors'])) {
                 }
                 ?>
             </div>
+            <!-- Click "Submit" Button (Sign Up) -->
             <input type="submit" class="btn" value="Sign Up" name="signup">
         </form>
         <p class="or">
@@ -95,6 +100,7 @@ if (isset($_SESSION['errors'])) {
             <i class="fab fa-google"></i>
             <i class="fab fa-facebook"></i>
         </div>
+        <!-- Sign In Button -->
         <div class="links">
             <p>Already Have Account ?</p>
             <a href="index.php">Sign In</a>
